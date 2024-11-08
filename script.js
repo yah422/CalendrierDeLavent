@@ -49,3 +49,20 @@ const colors = [
     '#FFBF69', '#FF99C8', '#A9DEF9', '#D0F4DE'
 ];
 
+// Création de la classe AdventCalendar pour structurer le code et organiser les fonctionnalités du calendrier de l'Avent.
+class AdventCalendar {
+    constructor() {
+        // Je sélectionne l'élément HTML ayant l'ID 'container' qui contiendra les fenêtres du calendrier.
+        this.container = document.getElementById('container');
+
+        // Je prépare les fenêtres du calendrier en initialisant leurs numéros, couleurs, et messages.
+        this.windows = this.initializeWindows();
+
+        // Je rends le calendrier visible en ajoutant les éléments au DOM.
+        this.render();
+
+        // Je charge l'état d'ouverture des fenêtres du calendrier à partir du stockage local pour garder les informations après un rafraîchissement de page.
+        this.loadState();
+    }
+
+}
